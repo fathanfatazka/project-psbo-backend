@@ -6,7 +6,9 @@ from django.contrib.gis.geos import Point
 
 class PointOfInterest(models.Model):
     place_name = models.CharField(max_length=30, null=False, blank=False)
-    location = models.PointField(geography=True, default=Point(0.0, 0.0))
+    location = models.PointField(geography=True, default=Point(-6.555760409044816, 106.7264194085899))
+    current_visitors = models.IntegerField(default=0, blank=False)
+    peak_hours = models.BooleanField(default=False, blank=False)
 
     @property
     def longitude(self):
